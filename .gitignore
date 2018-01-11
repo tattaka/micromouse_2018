@@ -1,0 +1,10 @@
+*~
+.DS_Store
+__pycache__
+images
+*.png
+*.jpg
+.dep
+build/
+Drivers/
+Backup/
