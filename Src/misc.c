@@ -10,6 +10,7 @@
 #include "machine_state.h"
 #include "stdbool.h"
 #include "parameter.h"
+#include "sensor.h"
 
 int mode;
 
