@@ -30,6 +30,7 @@ float err_buff_gyro = 0;
 float volatile target_speed = 0.0;
 float volatile target_omega = 0.0;
 float volatile target_accel = 0.0;
+float volatile offset = 0.0;
 
 float volatile run_time = 0.0;
 bool rampud_flag = false;
@@ -162,6 +163,7 @@ void control_machine(){
 
 int rampud_control(float range, float accel, float decel, float m_speed, float e_speed){
 	float max_speed;
+	range = range - offset;
 	start_speed = (speed_L[0] + speed_R[0])/2;
 	acc_range = ENCODER2LEN((m_speed*m_speed-start_speed*start_speed)/2*accel);
 	dec_range = ENCODER2LEN((m_speed*m_speed-e_speed*e_speed)/2*(-decel));

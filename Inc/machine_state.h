@@ -50,6 +50,7 @@ extern volatile float acc_range;
 extern volatile float dec_range;
 extern int ramp_count;
 extern bool turn_flag;
+extern volatile float offset;
 
 
 extern bool left_wall_controll; //enable = 1
