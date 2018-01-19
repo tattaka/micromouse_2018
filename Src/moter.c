@@ -165,13 +165,13 @@ int rampud_control(float range, float accel, float decel, float m_speed, float e
 	float max_speed;
 	range = range - offset;
 	start_speed = (speed_L[0] + speed_R[0])/2;
-	acc_range = ENCODER2LEN((m_speed*m_speed-start_speed*start_speed)/2*accel);
-	dec_range = ENCODER2LEN((m_speed*m_speed-e_speed*e_speed)/2*(-decel));
+	acc_range = (m_speed*m_speed-start_speed*start_speed)/2*accel;
+	dec_range = (m_speed*m_speed-e_speed*e_speed)/2*(-decel);
 	if(range < (acc_range + dec_range)){
 		//距離が足りなかった時の処理
 		max_speed = start_speed + accel * (start_speed + e_speed)/(accel + (-decel)); //要解読
-		acc_range = ENCODER2LEN((max_speed*max_speed-start_speed*start_speed)/2*accel);
-		dec_range = ENCODER2LEN((max_speed*max_speed-e_speed*e_speed)/2*(-decel));
+		acc_range = (max_speed*max_speed-start_speed*start_speed)/2*accel;
+		dec_range = (max_speed*max_speed-e_speed*e_speed)/2*(-decel);
 	}
 	else{
 		max_speed = m_speed;
