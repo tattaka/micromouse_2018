@@ -26,7 +26,7 @@ float accel_L = 0;
 float accel_R = 0;
 
 uint16_t sensor_value[SENSOR_NUM] = {0};
-uint16_t sensor_buff[3][SENSOR_NUM] = {0};
+uint16_t sensor_buff[3][SENSOR_NUM] = {{0}};
 sensor_state sensor_toggle = SEN_OFF;
 
 volatile float omega_debug = 0;
