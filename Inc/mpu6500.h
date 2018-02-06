@@ -13,7 +13,7 @@
 #include "spi.h"
 #include "stdbool.h"
 
-// MPU6500のレジスタマップ
+/*MPU6500のレジスタマップ*/
 #define MPU6500_RA_SELF_TEST_X_GYRO	0x00
 #define MPU6500_RA_SELF_TEST_Y_GYRO	0x01
 #define MPU6500_RA_SELF_TEST_Z_GYRO	0x02
@@ -74,7 +74,7 @@
 #define MPU6500_RA_ZA_OFFSET_L		0x7E
 
 #define MPU6500_DEVICE_ID			0x70
-// ジャイロのゲインがフルスケールで2000dpsの時の値
+/* ジャイロのゲインがフルスケールで2000dpsの時の値*/
 #define GYRO_FACTOR  16.4f
 
 #define GYRO_OFFSET_CNT 1000

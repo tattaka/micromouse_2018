@@ -11,7 +11,7 @@
 #define OFF	(0)
 #define ON	(1)
 
-//mouse parameter
+/*mouse parameter*/
 #define M_PI  (3.14159265358979323846)
 #define TIRE_DIAMETER	(0.025) //[m]タイヤの直径
 #define TREAD_WIDTH	(0.0675) //[m]

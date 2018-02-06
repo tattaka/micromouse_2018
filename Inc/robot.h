@@ -10,10 +10,10 @@
 
 #include "stm32f4xx_hal.h"
 
-//misc module
+/*misc module*/
 #define HELLOWORLD()	printf("Hello world!\n")
 
-//GPIO module
+/*GPIO module*/
 #define DEBUG_LED1_SET()	HAL_GPIO_WritePin (GPIOB, GPIO_PIN_6, GPIO_PIN_SET)
 #define DEBUG_LED2_SET()	HAL_GPIO_WritePin (GPIOB, GPIO_PIN_7, GPIO_PIN_SET)
 #define DEBUG_LED3_SET()	HAL_GPIO_WritePin (GPIOB, GPIO_PIN_8, GPIO_PIN_SET)
@@ -72,7 +72,7 @@
 #define RGB_GREEN_SET() HAL_GPIO_WritePin (GPIOD, GPIO_PIN_10, GPIO_PIN_RESET)
 
 
-//TIM module
+/*TIM module*/
 #define MUSIC_TIM	htim9
 #define MUSIC_CHAN	TIM_CHANNEL_2
 
@@ -85,7 +85,7 @@
 #define MOTER_L_CHAN	TIM_CHANNEL_4
 #define MOTER_R_CHAN	TIM_CHANNEL_1
 
-//ADC module
+/*ADC module*/
 #define SENSOR_ADC	hadc1
 #define SENSOR1_CHAN	ADC_CHANNEL_15
 #define SENSOR2_CHAN	ADC_CHANNEL_14
@@ -97,7 +97,7 @@
 
 #define VAT_ADC	hadc2
 
-//SPI module
+/*SPI module*/
 #define MPU6500_SPI	hspi1
 #define MRAM_SPI hspi3
 

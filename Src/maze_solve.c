@@ -60,7 +60,7 @@ int search(int x, int y, int goal_num, ...){ //(int 開始地点x, int 開始地
                    予想方向に進む
 		 */
 		dire = 0;
-		//進めるか進めないかを4方向で判断
+		/*進めるか進めないかを4方向で判断*/
 		if((white_data[agent]&0x02)==0) { //上壁が開いている場合
 			dire = (dire|0x08);
 		}

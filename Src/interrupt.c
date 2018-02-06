@@ -35,7 +35,8 @@ volatile int gyro_calib_count = 0;
 
 
 void HAL_TIM_PeriodElapsedCallback (TIM_HandleTypeDef * htim){
-	if (htim->Instance == htim5.Instance) {//100us周期でジャイロ・エンコーダ・速度・加速度を取得
+	if (htim->Instance == htim5.Instance) {
+		/*100us周期でジャイロ・エンコーダ・速度・加速度を取得*/
 		HAL_ADC_Start_IT(&VAT_ADC);
 		encoder_R[1] = encoder_R[0];
 		encoder_L[1] = encoder_L[0];
@@ -48,7 +49,8 @@ void HAL_TIM_PeriodElapsedCallback (TIM_HandleTypeDef * htim){
 		accel_L = (speed_L[0] - speed_L[1])/DELTA_T/10;
 		accel_R = (speed_R[0] - speed_R[1])/DELTA_T/10;
 	}
-	if (htim->Instance == htim6.Instance) { // 1ms周期で制御をかける
+	if (htim->Instance == htim6.Instance) {
+		/*1ms周期で制御をかける*/
 		gyro_z[1] = gyro_z[0];
 
 		gyro_z[0] = MPU6500_read_gyro_z();
