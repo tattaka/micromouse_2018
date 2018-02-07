@@ -165,8 +165,8 @@ void map_init(int x, int y, int mode, int goal_num, ...){ //現在の座標、�
 	int j = 0;
 	int k = 0;
 
-	int head = 0; //更新判断変数
-	int tail = 1;
+	int maze_head= 0; //更新判断変数
+	int maze_tail = 1;
 
 	int temp = 255; //ソート用変数
 	int buffx = 0; //1つ前の予想エージェントx座標
@@ -204,7 +204,7 @@ void map_init(int x, int y, int mode, int goal_num, ...){ //現在の座標、�
 
 		j = 0; //現在更新中の歩数の値
 		//iは現在更新中の座標
-		while(head != tail) {
+		while(maze_head!= maze_tail) {
 			for(i = 0; i < MAZESIZE_X*MAZESIZE_Y; i++) {
 				if((white_data[i]>>8)==j) { //現在のマスの歩数が現在更新中の歩数である場合
 					if((i/MAZESIZE_X)<MAZESIZE_Y-1) { //上側にマスがある時
@@ -237,10 +237,10 @@ void map_init(int x, int y, int mode, int goal_num, ...){ //現在の座標、�
 					}
 				}
 			}
-			tail = 0;
+			maze_tail = 0;
 			for(k = 0; k < MAZESIZE_X*MAZESIZE_Y; k++) { //現在のターゲット歩数より大きいマスが見つかった場合未更新
 				if(j<(white_data[k]>>8)) {
-					tail = 1;
+					maze_tail = 1;
 				}
 			}
 			j++;
@@ -390,10 +390,10 @@ void map_init(int x, int y, int mode, int goal_num, ...){ //現在の座標、�
 			}
 		}
 		j = 0; //現在更新中の歩数の値
-		head = 0; //更新判断変数
-		tail = 1;
+		maze_head= 0; //更新判断変数
+		maze_tail = 1;
 		//iは現在更新中の座標
-		while(head != tail) {
+		while(maze_head!= maze_tail) {
 			for(i = 0; i < MAZESIZE_X*MAZESIZE_Y; i++) {
 				if((white_data[i]>>8)==j) { //現在のマスの歩数が現在更新中の歩数である場合
 					if((i/MAZESIZE_X)<MAZESIZE_Y-1) { //上側にマスがある時
@@ -482,10 +482,10 @@ void map_init(int x, int y, int mode, int goal_num, ...){ //現在の座標、�
 					}
 				}
 			}
-			tail = 0;
+			maze_tail = 0;
 			for(k = 0; k < MAZESIZE_X*MAZESIZE_Y; k++) { //現在のターゲット歩数より大きいマスが見つかった場合未更新
 				if(j<(white_data[k]>>8)) {
-					tail = 1;
+					maze_tail = 1;
 				}
 			}
 			j++;
