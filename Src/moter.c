@@ -190,10 +190,18 @@ int rampud_control(float range, float accel, float decel, float m_speed, float e
 	}
 
 	while(range > ENCODER2LEN((encoder_R[0]+encoder_L[0])/2)){
-		target_speed = e_speed;
+		if(e_speed > 0.2){
+			target_speed = e_speed;
+		}
+		else{
+			target_speed = 0.2;
+		}
 		target_accel = decel;
 		target_omega = 0;
 	}
+	target_speed = e_speed;
+	target_accel = 0;
+	target_omega = 0;
 	return 1;
 /*
 	float max_speed = 0;
