@@ -75,10 +75,10 @@ void mode_select(){
 		encoder_R[i] = 0;
 		encoder_L[i] = 0;
 	}
-	HAL_TIM_Encoder_Start(&htim2,TIM_CHANNEL_1);
-	HAL_TIM_Encoder_Start(&htim2,TIM_CHANNEL_2);
-	HAL_TIM_Encoder_Start(&htim3,TIM_CHANNEL_1);
-	HAL_TIM_Encoder_Start(&htim3,TIM_CHANNEL_2);
+	HAL_TIM_Encoder_Start(&ENCODER_L_TIM,TIM_CHANNEL_1);
+	HAL_TIM_Encoder_Start(&ENCODER_L_TIM,TIM_CHANNEL_2);
+	HAL_TIM_Encoder_Start(&ENCODER_R_TIM,TIM_CHANNEL_1);
+	HAL_TIM_Encoder_Start(&ENCODER_R_TIM,TIM_CHANNEL_2);
 	while(flag){
 		mode_temp = encoder_R[0] / ONEROTATE_TIRE;
 		if(mode_temp > 6){
