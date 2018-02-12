@@ -168,9 +168,8 @@ int main(void)
     uint32_t start_time = DWT_Get_Cycle();
     DWT_Delay_us(10000000);
     uint32_t stop_time = DWT_Get_Cycle();
-    printf("%f\r\n", get_process_time(start_time, stop_time));
+    printf("Hello Pimelodia var:%0.1f %f\r\n", 1.5, get_process_time(start_time, stop_time));
     RGB_GREEN_RESET();
-    printf("Hello Pimelodia var:%0.1f", 1.5);
   }
   /* USER CODE END 3 */
 
