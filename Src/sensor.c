@@ -8,7 +8,7 @@
 #include "sensor.h"
 
 void sensing_start(void){
-	HAL_ADC_Start_DMA(&hadc1, (uint32_t *)sensor_value, SENSOR_NUM);
+	HAL_ADC_Start_DMA(&hadc1, (uint32_t *)sensor_buff[2], SENSOR_NUM);
 }
 
 void sensing_stop(void){
